@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Twin Smart Parking — Denah Real-Time (NAY_729)</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body data-page="public">
+  <nav class="navbar">
+    <a class="brand" href="./index.html">🅿️ Digital Twin <span>Smart Parking</span></a>
+    <div class="nav-links">
+      <a href="./index.html" class="active">Denah Publik</a>
+      <a href="./login.html" class="btn-nav-primary">Login Admin</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="page-header">
+      <div>
+        <h1>Denah Parkir Real-Time (P01–P12)</h1>
+        <p>Pemantauan ketersediaan slot parkir kampus secara langsung tanpa perlu login.</p>
+      </div>
+      <div id="liveBadge" class="live-badge">
+        <span class="dot"></span>
+        <span id="liveText">Menghubungkan...</span>
+      </div>
+    </div>
+
+    <section class="stats-grid">
+      <div class="stat-card"><div class="label">Total Slot</div><div id="statTotal" class="value">12</div></div>
+      <div class="stat-card kosong"><div class="label">Kosong (Tersedia)</div><div id="statKosong" class="value">-</div></div>
+      <div class="stat-card terisi"><div class="label">Terisi</div><div id="statTerisi" class="value">-</div></div>
+      <div class="stat-card maintenance"><div class="label">Maintenance</div><div id="statMaint" class="value">-</div></div>
+    </section>
+
+    <section class="card">
+      <div class="card-title">
+        <span>Denah Digital Twin (Zona A &amp; Zona B)</span>
+        <small style="color:var(--muted);font-weight:500;">Pembaruan otomatis setiap 2,5 detik</small>
+      </div>
+
+      <div id="rowTop" class="lot-row"></div>
+      <div class="lane-divider">← &nbsp; Jalur Kendaraan (Akses Masuk / Keluar) &nbsp; →</div>
+      <div id="rowBottom" class="lot-row"></div>
+
+      <div class="legend">
+        <span class="legend-item"><span class="swatch" style="background:#22c55e;"></span> Kosong (Tersedia)</span>
+        <span class="legend-item"><span class="swatch" style="background:#ef4444;"></span> Terisi</span>
+        <span class="legend-item"><span class="swatch" style="background:#64748b;"></span> Maintenance (Dikunci)</span>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="./js/app.js"></script>
+</body>
+</html>
